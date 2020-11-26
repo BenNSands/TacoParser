@@ -16,6 +16,7 @@
             
 
             //DONE If your array.Length is less than 3, something went wrong
+            //Should probably use a try catch
             if (cells.Length < 3)
             {
                 //DONE Log that and return null
@@ -38,16 +39,13 @@
 
             // Then, you'll need an instance of the TacoBell class
             // With the name and point set correctly
-            var tacoBell = new TacoBell();
-            tacoBell.Name = tacoBellName;
-            var point = new double[] {lat, lon};
-            tacoBell.Location.Latitude = lat;
-
+            var point = new Point() { Latitude = lat, Longitude = lon };
+            var tacoBell = new TacoBell() { Name = tacoBellName, Location = point};
 
             // Then, return the instance of your TacoBell class
             // Since it conforms to ITrackable
 
-            return null;
+            return tacoBell;
         }
     }
 }
